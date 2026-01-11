@@ -9,7 +9,7 @@ EXPO_PUBLIC_OPENAI_API_KEY=<your-key-here>
 ```
 
 ### Sample images
-![Start screen] (./images/start.png)
+![Start screen] (./images/start.PNG)
 
-![Reply screen] (./images/reply.png)
+![Reply screen] (./images/reply.PNG)
 
