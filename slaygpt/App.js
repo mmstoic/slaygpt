@@ -52,6 +52,11 @@ export default function App() {
             model: "gpt-3.5-turbo",
             messages: [
               {
+                role: "system",
+                content:
+                  "You are SlayGPT. You respond to all prompts with words like bestie, slay, and queen. You are a hype woman! Yasss!!!",
+              },
+              {
                 role: "user",
                 content: prompt,
               },
@@ -89,7 +94,7 @@ export default function App() {
     >
       {/* Safe area for status bar */}
       <View style={styles.header}>
-        <Text style={styles.title}>ChatGPT Wrapper</Text>
+        <Text style={styles.title}>SlayGPT</Text>
       </View>
 
       {/* Scrollable area for the AI response */}
@@ -98,7 +103,7 @@ export default function App() {
           // Show a spinner while waiting for response
           <ActivityIndicator
             size="large"
-            color="#0066cc"
+            color="#f6a2a5"
             style={styles.loader}
           />
         ) : response ? (
@@ -107,7 +112,7 @@ export default function App() {
         ) : (
           // Show placeholder text when there's no response yet
           <Text style={styles.placeholderText}>
-            Enter a prompt below and tap Send to get started!
+            Enter a prompt below bestie!
           </Text>
         )}
       </ScrollView>
@@ -116,7 +121,7 @@ export default function App() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Enter your prompt here..."
+          placeholder="What's on your mind today, queen?"
           value={prompt}
           onChangeText={setPrompt}
           // Allow multiple lines for longer prompts
@@ -140,18 +145,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#fef7f2",
   },
   header: {
-    backgroundColor: "#0066cc",
-    paddingTop: Platform.OS === "ios" ? 50 : 30,
-    paddingBottom: 15,
+    backgroundColor: "#f6a2a5",
+    paddingTop: Platform.OS === "ios" ? 60 : 30,
+    paddingBottom: 20,
     paddingHorizontal: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#ffffff",
+    color: "#fef7f2",
+    fontFamily: "Snell Roundhand",
   },
   responseContainer: {
     flex: 1,
@@ -161,24 +167,28 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: "#333333",
+    fontFamily: "Snell Roundhand",
   },
   placeholderText: {
     fontSize: 16,
     lineHeight: 24,
     color: "#999999",
-    fontStyle: "italic",
+    //fontStyle: "italic",
     textAlign: "center",
     marginTop: 50,
+    fontFamily: "Snell Roundhand",
   },
   loader: {
     marginTop: 50,
   },
   inputContainer: {
+    //footer
     flexDirection: "row",
     padding: 15,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fef7f2",
     borderTopWidth: 1,
     borderTopColor: "#dddddd",
+    paddingBottom: Platform.OS === "ios" ? 30 : 15,
   },
   input: {
     flex: 1,
@@ -189,10 +199,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     maxHeight: 100,
     marginRight: 10,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fef7f2",
+    fontFamily: "Snell Roundhand",
   },
   button: {
-    backgroundColor: "#0066cc",
+    backgroundColor: "#f6a2a5",
     borderRadius: 8,
     paddingHorizontal: 20,
     justifyContent: "center",
@@ -202,8 +213,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#cccccc",
   },
   buttonText: {
-    color: "#ffffff",
+    color: "#fef7f2",
     fontSize: 16,
     fontWeight: "bold",
+    fontFamily: "Snell Roundhand",
   },
 });
